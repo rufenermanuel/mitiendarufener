@@ -1,15 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import { NavBar } from './components/NavBar';
-import { Counter } from './components/Counter';
+import { Navbar } from './Components/Navbar';
+import { ItemListContainer } from './Components/ItemListContainer';
+
 function App() {
   return (
     <div className="App">
+
       <header className="App-header">
-        <NavBar/>
+        <Navbar/>
+        <ItemListContainer greeting='Saludos desde Greeting en APP.js'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         This is my Store!!! mitiendarufener
+        This is my Store!!! mitiendarufener
         </p>
         <a
           className="App-link"
@@ -17,12 +20,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-         
         </a>
+        
       </header>
-      <body>
-        <Counter/>
-      </body>
     </div>
   );
 }
