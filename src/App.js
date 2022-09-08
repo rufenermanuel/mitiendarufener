@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { NavBar } from './components/NavBar';
+import { Counter } from './components/Counter';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,9 @@ function App() {
          
         </a>
       </header>
+      <body>
+        <Counter/>
+      </body>
     </div>
   );
 }
