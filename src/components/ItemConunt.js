@@ -58,7 +58,6 @@ export const ItemConunt = (props) => {
         </button>
         <button
           onClick={() => {
-            disable();
             setNumber(props.initial);
           }}
         >
@@ -69,7 +68,6 @@ export const ItemConunt = (props) => {
             if (number == 0) {
               noResta();
             } else {
-              disable();
               setNumber(number - 1);
             }
           }}
