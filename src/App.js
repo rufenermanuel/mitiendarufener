@@ -9,7 +9,7 @@ function App() {
 
       <header className="App-header">
         <Navbar/>
-        <ItemListContainer greeting='Saludos desde Greeting en APP.js'/>
+        <ItemListContainer greeting='Saludos desde Greeting en APP.js usando props'/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
         This is my Store!!! mitiendarufener

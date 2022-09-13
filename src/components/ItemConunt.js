@@ -1,61 +1,90 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const ItemConunt = (props) => {
-  const [number, setNumber] = useState(0);
-  const [buttonState,setButtonState] = useState(false)
-
-  const disable=()=>{
-    if (props.cantidad>number+1) {
-        setButtonState(false)
-        console.log('props mayor')
+  const [number, setNumber] = useState(props.initial);
+  const [buttonState, setButtonState] = useState(false);
+  //Función que se ejecuta para notificar que no hay stock
+  const noSuma = () => {
+    alert(
+      `No puede agregar más unidades, llegó al limite disponible que son ${props.cantidad}`
+    );
+  };
+  //Función que se ejecuta al intentar restar cuando el contador está en cero
+  const noResta = () => {
+    alert(`Las cantidades indicadas no pueden ser negativas`);
+  };
+  // FUnción que revisa el stocl y si el mismo es igual a cero deshabilita los botones de sumar y agregar al carrito
+  const noStock = () => {
+    if (props.cantidad == 0) {
+      setButtonState(true);
     } else {
-        setButtonState(true)
-        console.log('props menor')
-
+      setButtonState(false);
     }
-}
+  };
+  //Función que se ejecuta al presionar el botón agregar al carrito
+  const onAdd = () => {
+    if (number == 0) {
+      alert(
+        "Es necesario agregar al menos una unidad para ejecutar esta accion"
+      );
+    } else if (number == 1) {
+      alert(`Se agregó a tu carrito ${number} unidad`);
+    } else {
+      alert(`Se agregaron a tu carrito ${number} unidades`);
+    }
+  };
+  //Se ejecuta al montar el componente para verificar que exista stock
+  useEffect(() => {
+    return noStock();
+  }, []);
 
-/* console.log(props.cantidad)
-console.log(number) */
   return (
     <>
       <h1>Unidades disponibles: {props.cantidad}</h1>
       <h3>{number}</h3>
       <div style={styles.buttons}>
-     
-        <button disabled={buttonState}
+        <button
+          disabled={buttonState}
           onClick={() => {
-            console.log(`entró a onclick + ${number}` )
-            setNumber(number + 1);
-            console.log(number)
-            disable()
-            console.log(number)
-
+            console.log(number);
+            if (number == props.cantidad) {
+              noSuma();
+            } else {
+              setNumber(number + 1);
+            }
           }}
         >
           Sumar
-        </button><button
+        </button>
+        <button
           onClick={() => {
-            disable()
-            setNumber(0);
-            console.log(number)
-
-                      }}
+            disable();
+            setNumber(props.initial);
+          }}
         >
           Resetear
         </button>
         <button
           onClick={() => {
-            disable()
-            setNumber(number - 1);
-
+            if (number == 0) {
+              noResta();
+            } else {
+              disable();
+              setNumber(number - 1);
+            }
           }}
         >
           Restar
         </button>
-        
       </div>
-      <button>Agregar al Carrito</button>
+      <button
+        disabled={buttonState}
+        onClick={() => {
+          onAdd();
+        }}
+      >
+        Agregar al carrito {number} unidades
+      </button>
     </>
   );
 };
