@@ -15,7 +15,7 @@ const ItemConunt = (props) => {
   };
   // FUnción que revisa el stocl y si el mismo es igual a cero deshabilita los botones de sumar y agregar al carrito
   const noStock = () => {
-    if (props.cantidad == 0) {
+    if (props.cantidad === 0) {
       setButtonState(true);
     } else {
       setButtonState(false);
@@ -23,11 +23,11 @@ const ItemConunt = (props) => {
   };
   //Función que se ejecuta al presionar el botón agregar al carrito
   const onAdd = () => {
-    if (number == 0) {
+    if (number === 0) {
       alert(
         "Es necesario agregar al menos una unidad para ejecutar esta accion"
       );
-    } else if (number == 1) {
+    } else if (number === 1) {
       alert(`Se agregó a tu carrito ${number} unidad`);
     } else {
       alert(`Se agregaron a tu carrito ${number} unidades`);

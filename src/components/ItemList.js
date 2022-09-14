@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 const ItemList = () => {
-  const [product, setProduct] = useState([
+  const [product, setProduct] = useState([]);
+  //Origen data https://fakestoreapi.com/
+  const data = [
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -29,17 +31,25 @@ const ItemList = () => {
         "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       pictureUrl: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
     },
-  ]);
-  //Origen data https://fakestoreapi.com/
-  
-  
-  
+  ];
+
+  const getData = () => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res(data);
+      }, 2000);
+    });
+  };
+  getData().then((datos) => {
+    setProduct(datos);
+  });
+
   return (
     <div style={styles.container}>
       {product.map((prod) => {
         return (
-          <Item
-            id={prod.id}
+          <Item 
+            key={prod.id}
             title={prod.title}
             price={prod.price}
             description={prod.description}
