@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const ItemConunt = (props) => {
+const ItemConunt = (props) => {
   const [number, setNumber] = useState(props.initial);
   const [buttonState, setButtonState] = useState(false);
   //Función que se ejecuta para notificar que no hay stock
@@ -95,3 +95,4 @@ const styles = {
     color: "purple",
   },
 };
+export default ItemConunt;

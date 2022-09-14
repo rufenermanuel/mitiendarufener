@@ -1,7 +1,7 @@
 import React from "react";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
-export const CartWidget = () => {
+const CartWidget = () => {
   return (
     <div style={styles.container1}>
       <p style={styles.paragraph}>Desde CartWidget</p>
@@ -16,11 +16,11 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: 20,
-    color:'purple'
-
+    color: "purple",
   },
   paragraph: {
     padding: 20,
-    color:'orange'
+    color: "orange",
   },
 };
+export default CartWidget;
