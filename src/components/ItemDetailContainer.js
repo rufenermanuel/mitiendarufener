@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
     setProducDetail(datos);
   });
 
-  
+ 
   return (
     <>
       <h3>Desde ItemDetailContainer</h3>
