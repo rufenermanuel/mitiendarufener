@@ -1,5 +1,5 @@
 import React from "react";
-import ItemConunt from "./ItemConunt";
+import ItemConunt from "./ItemCount";
 import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {

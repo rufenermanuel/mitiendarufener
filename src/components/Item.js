@@ -20,6 +20,10 @@ const styles = {
     alignItems: "center",
     padding: 60,
     width: "28%",
+    height:"620px",
+    borderStyle: "solid",
+    borderRadius:"3%",
+    color:"yellow"
   },
   image: {
     width: "150px",
@@ -28,8 +32,8 @@ const styles = {
     padding: 10,
   },
   title: {
-    padding: 10,
-    fontSize: 30,
+    padding: 25,
+    fontSize: 25,
   },
   description: {
     fontSize: 15,

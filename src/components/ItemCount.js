@@ -47,7 +47,7 @@ const ItemConunt = (props) => {
           disabled={buttonState}
           onClick={() => {
             console.log(number);
-            if (number == props.cantidad) {
+            if (number === props.cantidad) {
               noSuma();
             } else {
               setNumber(number + 1);
@@ -65,7 +65,7 @@ const ItemConunt = (props) => {
         </button>
         <button
           onClick={() => {
-            if (number == 0) {
+            if (number === 0) {
               noResta();
             } else {
               setNumber(number - 1);

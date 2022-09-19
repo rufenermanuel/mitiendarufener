@@ -48,11 +48,10 @@ const ItemList = () => {
     <div style={styles.container}>
       {product.map((prod) => {
         return (
-          <Item 
+          <Item
             key={prod.id}
             title={prod.title}
             price={prod.price}
-            description={prod.description}
             pictureUrl={prod.pictureUrl}
           />
         );
