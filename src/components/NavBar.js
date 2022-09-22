@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.jpg";
 import CartWidget from "./CartWidget";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <header style={styles.container}>
       <img style={styles.image} src={logo} alt="Imagen Ecomerce" />
@@ -41,4 +41,4 @@ const styles = {
   },
 };
 
-export default Navbar;
+export default NavBar;
