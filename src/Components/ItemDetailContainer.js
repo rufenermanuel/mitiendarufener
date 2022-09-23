@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const [producDetail, setProducDetail] = useState([]);
@@ -13,26 +13,26 @@ const ItemDetailContainer = () => {
       pictureUrl: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     },
   ];
-
-  const getDetail = () => {
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(data);
-      }, 2000);
+  useEffect(() => {
+    const getDetail = () => {
+      return new Promise((res, rej) => {
+        setTimeout(() => {
+          res(data);
+        }, 2000);
+      });
+    };
+    getDetail().then((datos) => {
+      setProducDetail(datos);
     });
-  };
-  getDetail().then((datos) => {
-    setProducDetail(datos);
-  });
+  }, []);
 
- 
   return (
     <>
       <h3>Desde ItemDetailContainer</h3>
       <div style={styles.DetailContainer}>
         {producDetail.map((prod) => {
           return (
-            <Item
+            <ItemDetail
               key={prod.id}
               title={prod.title}
               price={prod.price}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 
 const ApiDetails = () => {
   const [prodDetail, setProdDetail] = useState([]);
@@ -11,18 +11,17 @@ const ApiDetails = () => {
     const url = `https://fakestoreapi.com/products?limit=1`;
     const resp = await fetch(url);
     const data = await resp.json();
-    console.log(data);
 
     const productsData = data.map((prod) => {
       return {
         id: prod.id,
         title: prod.title,
+        price:prod.price,
         pictureUrl: prod.image,
         description: prod.description,
       };
     });
 
-    console.log(productsData);
     setProdDetail(productsData);
   };
 
@@ -30,14 +29,14 @@ const ApiDetails = () => {
     <>
       <h3>Desde la Api</h3>
       <div style={styles.DetailContainer}>
-        {prodDetail.map((prod) => {
+        {prodDetail.map(({id,title,price,description,pictureUrl}) => {
           return (
-            <Item
-              key={prod.id}
-              title={prod.title}
-              price={prod.price}
-              description={prod.description}
-              pictureUrl={prod.pictureUrl}
+            <ItemDetail
+              key={id}
+              title={title}
+              price={price}
+              description={description}
+              pictureUrl={pictureUrl}
             />
           );
         })}
