@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import data from "./data"
+import { getProductById } from "./Api";
+
 
 const ItemDetailContainer = () => {
   console.log('aca viene la data ...');
@@ -36,14 +38,7 @@ const ItemDetailContainer = () => {
     }, 
   ];*/
   useEffect(() => {
-    const getDetail = () => {
-      return new Promise((res, rej) => {
-        setTimeout(() => {
-          res(data.filter(dat=>dat.id===parseInt(id) ));
-        }, 1500);
-      });
-    };
-    getDetail().then((datos) => {
+      getProductById(id).then((datos) => {
       setProducDetail(datos);
     });
   }, []);

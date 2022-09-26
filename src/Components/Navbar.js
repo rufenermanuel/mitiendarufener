@@ -1,24 +1,27 @@
 import React from "react";
 import logo from "../assets/logo.jpg";
 import CartWidget from "./CartWidget";
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <header style={styles.container}>
-     <Link to="/"> <img style={styles.image} src={logo} alt="Imagen Ecomerce" /></Link>
+      <Link to="/">
+        {" "}
+        <img style={styles.image} src={logo} alt="Imagen Ecomerce" />
+      </Link>
       <h1 style={styles.title}>mitiendarufener</h1>
 
       <nav>
-        <a style={styles.links} href="">
-          Categoria 1{" "}
-        </a>
-        <a style={styles.links} href="">
-          Categoria 2{" "}
-        </a>
-        <a style={styles.links} href="">
-          Categoria 3{" "}
-        </a>
+        <NavLink style={styles.links} to="/category/backpack">
+          Backpack{" "}
+        </NavLink>
+        <NavLink style={styles.links} to="/category/tshirts">
+          T shirts{" "}
+        </NavLink>
+        <NavLink style={styles.links} to="/category/jacket">
+          Jacket{" "}
+        </NavLink>
       </nav>
       <CartWidget />
     </header>

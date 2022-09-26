@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
-import data from "./data";
-const ItemList = (props) => {
- 
+
+const ItemList = ({ list = [] }) => {
   return (
     <div style={styles.container}>
-      {data.map((prod) => {
+      {list.map((prod) => {
         return (
-          <Item
-            key={prod.id}
-            title={prod.title}
-            price={prod.price}
-            pictureUrl={prod.pictureUrl}
+          <Item 
+            data={prod}
+            key={String('item-'+prod.id)}
           />
         );
       })}

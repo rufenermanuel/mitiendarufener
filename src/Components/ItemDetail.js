@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
   return (
@@ -8,6 +10,9 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
         <img src={pictureUrl} alt={title} style={styles.image} />
         <p>${price}</p>
         <p style={styles.description}>{description}</p>
+        <Link to={`/`}>
+          <button>Volver</button>
+        </Link>
       </div>
     </div>
   );
