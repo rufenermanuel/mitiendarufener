@@ -1,3 +1,17 @@
+# Descripcion General # 
+
+Desarrollo en React con fines educativos donde se aplica lo aprendido a lo largo de el curso de React en CoderHouse para la realización de un e-comerce. 
+
+Se puede realizar las siguientes acciones: 
+
+-Navegar utilizando los botones del Nav a las diferentes categorias
+-Hacer click en el logo de la web para volver a la página principal
+-hacer click en la imagen del producto para ver sus detalles
+-Indicar cantidad de productos a agregar al carrito
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

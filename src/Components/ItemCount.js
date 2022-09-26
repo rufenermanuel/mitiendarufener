@@ -39,9 +39,8 @@ const ItemConunt = (props) => {
   }, []);
 
   return (
-    <>
-      <h1>Unidades disponibles: {props.cantidad}</h1>
-      <h3>{number}</h3>
+    <div style={styles.container}>
+      <h5>Unidades disponibles: {props.cantidad}</h5>
       <div style={styles.buttons}>
         <button
           disabled={buttonState}
@@ -75,6 +74,7 @@ const ItemConunt = (props) => {
           Restar
         </button>
       </div>
+      <h3>{number}</h3>
       <button
         disabled={buttonState}
         onClick={() => {
@@ -83,10 +83,17 @@ const ItemConunt = (props) => {
       >
         Agregar al carrito {number} unidades
       </button>
-    </>
+    </div>
   );
 };
 const styles = {
+  container: {
+    display: "flex",
+    justifyCOntent: "space-between",
+    alignItems: "center",
+   
+    
+  },
   buttons: {
     display: "flex",
     justifyContent: "space-between",
@@ -95,4 +102,5 @@ const styles = {
     color: "purple",
   },
 };
+
 export default ItemConunt;

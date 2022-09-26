@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "../assets/logo.jpg";
 import CartWidget from "./CartWidget";
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <header style={styles.container}>
-      <img style={styles.image} src={logo} alt="Imagen Ecomerce" />
+     <Link to="/"> <img style={styles.image} src={logo} alt="Imagen Ecomerce" /></Link>
       <h1 style={styles.title}>mitiendarufener</h1>
 
       <nav>
@@ -31,7 +32,7 @@ const styles = {
     alignItems: "center",
   },
   image: {
-    width: "10%",
+    width: "35%",
   },
   links: {
     padding: 10,

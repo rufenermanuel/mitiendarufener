@@ -19,7 +19,7 @@ const styles = {
     justifyCOntent: "space-between",
     alignItems: "center",
     padding: 60,
-    width: "28%",
+    width: "90%",
     height:"620px",
     borderStyle: "solid",
     borderRadius:"3%",
