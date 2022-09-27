@@ -9,6 +9,8 @@ Se puede realizar las siguientes acciones:
 -hacer click en el boton detalle del producto para ver sus detalles
 -Indicar cantidad de productos a agregar al carrito
 
+Se utilizó para el desarrollo del proyecto React(react router, hooks), material icons,
+
 ![](appGif.gif)
 
 # Getting Started with Create React App
