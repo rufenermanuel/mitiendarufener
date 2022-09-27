@@ -6,11 +6,10 @@ Se puede realizar las siguientes acciones:
 
 -Navegar utilizando los botones del Nav a las diferentes categorias
 -Hacer click en el logo de la web para volver a la página principal
--hacer click en botón detalles del producto para ver sus detalles
+-hacer click en el boton detalle del producto para ver sus detalles
 -Indicar cantidad de productos a agregar al carrito
 
-
-
+![](appGif.gif)
 
 # Getting Started with Create React App
 
