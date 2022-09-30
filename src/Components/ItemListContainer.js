@@ -1,33 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import data from "./data";
+import { getProductsBiCategory } from "./Api";
 
 const ItemListContainer = (props) => {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
-  const getData = () => {
-  /* Si categoryId getProductByCategory else getProduct */
   
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        if (categoryId) {
-          console.log(categoryId);
-          const filteredItems = data.filter(
-            (prod) => prod.category === categoryId
-          );
-          res(filteredItems);
-        } else {
-          res(data);
-        }
-        res(categoryId?data.filter(
-          (prod) => prod.category === categoryId
-        ):data)
-      }, 1500);
-    });
-  };
   useEffect(() => {
-    getData().then((datos) => {
+    getProductsBiCategory(categoryId).then((datos) => {
       setProducts(datos);
     });
   }, [categoryId]);

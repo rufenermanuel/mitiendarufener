@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const ItemConunt = (props) => {
-  const [number, setNumber] = useState(props.initial);
+const ItemConunt = ({ initial, cantidad, adding }) => {
+  const [number, setNumber] = useState(initial);
   const [buttonState, setButtonState] = useState(false);
   //Función que se ejecuta para notificar que no hay stock
   const noSuma = () => {
     alert(
-      `No puede agregar más unidades, llegó al limite disponible que son ${props.cantidad}`
+      `No puede agregar más unidades, llegó al limite disponible que son ${cantidad}`
     );
   };
   //Función que se ejecuta al intentar restar cuando el contador está en cero
@@ -15,7 +15,7 @@ const ItemConunt = (props) => {
   };
   // FUnción que revisa el stocl y si el mismo es igual a cero deshabilita los botones de sumar y agregar al carrito
   const noStock = () => {
-    if (props.cantidad === 0) {
+    if (cantidad === 0) {
       setButtonState(true);
     } else {
       setButtonState(false);
@@ -40,28 +40,24 @@ const ItemConunt = (props) => {
 
   return (
     <div style={styles.container}>
-      <h5>Unidades disponibles: {props.cantidad}</h5>
+      <h5>Unidades disponibles: {cantidad}</h5>
       <div style={styles.buttons}>
         <button
           disabled={buttonState}
           onClick={() => {
             console.log(number);
-            if (number === props.cantidad) {
+            if (number === cantidad) {
               noSuma();
             } else {
               setNumber(number + 1);
             }
           }}
         >
-          Sumar
+          +
         </button>
-        <button
-          onClick={() => {
-            setNumber(props.initial);
-          }}
-        >
-          Resetear
-        </button>
+
+        <h3>{number}</h3>
+
         <button
           onClick={() => {
             if (number === 0) {
@@ -71,17 +67,19 @@ const ItemConunt = (props) => {
             }
           }}
         >
-          Restar
+          -
+        </button>
+
+        <button
+          onClick={() => {
+            setNumber(initial);
+          }}
+        >
+          Resetear
         </button>
       </div>
-      <h3>{number}</h3>
-      <button
-        disabled={buttonState}
-        onClick={() => {
-          onAdd();
-        }}
-      >
-        Agregar al carrito {number} unidades
+      <button disabled={buttonState} onClick={adding}>
+        Agregar al carrito {number} unidades del producto !
       </button>
     </div>
   );
@@ -91,8 +89,6 @@ const styles = {
     display: "flex",
     justifyCOntent: "space-between",
     alignItems: "center",
-   
-    
   },
   buttons: {
     display: "flex",

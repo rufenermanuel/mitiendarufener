@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import ItemConunt from "./ItemCount";
 
 const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
+  const [productsAdded, setProductAdded] = useState(false);
+  const switcher = () => setProductAdded(true);
   return (
     <div style={styles.container}>
       <div key={id}>
@@ -10,9 +12,23 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
         <img src={pictureUrl} alt={title} style={styles.image} />
         <p>${price}</p>
         <p style={styles.description}>{description}</p>
-        <Link to={`/`}>
-          <button>Volver</button>
-        </Link>
+
+        {productsAdded ? (
+          <div>
+            
+            <NavLink to="/cart">
+              {" "}
+              <button>Ir al Carrito ! </button>
+            </NavLink>
+          </div>
+        ) : (
+          <div>
+            <Link to={`/`}>
+              <button>Volver</button>
+            </Link>
+            <ItemConunt cantidad={5} initial={1} adding={switcher} />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -25,10 +41,10 @@ const styles = {
     alignItems: "center",
     padding: 60,
     width: "90%",
-    height:"620px",
+    height: "620px",
     borderStyle: "solid",
-    borderRadius:"3%",
-    color:"yellow"
+    borderRadius: "3%",
+    color: "yellow",
   },
   image: {
     width: "150px",

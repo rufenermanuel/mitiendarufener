@@ -14,7 +14,6 @@ const Item = ({ data }) => {
         </Link>
         <p>${price}</p>
         <p style={styles.description}>{description}</p>
-        <ItemConunt cantidad={5} initial={1} />
       </div>
     </div>
   );
