@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 import ItemConunt from "./ItemCount";
 
-const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
+const ItemDetail = ({ item }) => {
+  const { id, title, price, pictureUrl, description, quantity } = item;
   const [productsAdded, setProductAdded] = useState(false);
-  const switcher = () => setProductAdded(true);
+  const { addToCart } = useCartContext();
+
+  const onAdding = (cartQuantity) => {
+    setProductAdded(true);
+    addToCart(item, cartQuantity);
+  };
   return (
     <div style={styles.container}>
       <div key={id}>
@@ -15,9 +22,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
 
         {productsAdded ? (
           <div>
-            
             <NavLink to="/cart">
-              {" "}
               <button>Ir al Carrito ! </button>
             </NavLink>
           </div>
@@ -26,7 +31,7 @@ const ItemDetail = ({ id, title, price, pictureUrl, description }) => {
             <Link to={`/`}>
               <button>Volver</button>
             </Link>
-            <ItemConunt cantidad={5} initial={1} adding={switcher} />
+            <ItemConunt quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
       </div>
