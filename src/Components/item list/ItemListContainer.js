@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getProductsBiCategory } from "./Api";
+import { getProductsByCategory } from "../service/Api";
 
 const ItemListContainer = (props) => {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    getProductsBiCategory(categoryId).then((datos) => {
+    getProductsByCategory(categoryId).then((datos) => {
       setProducts(datos);
     });
   }, [categoryId]);

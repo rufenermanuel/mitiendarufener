@@ -12,7 +12,7 @@ export const getProductById = async (id) => {
   });
 };
 
-export const getProductsBiCategory = async (categoryId) => {
+export const getProductsByCategory = async (categoryId) => {
   return new Promise((res, rej) => {
     setTimeout(() => {
       if (categoryId) {

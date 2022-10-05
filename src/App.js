@@ -1,8 +1,8 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import ItemListContainer from "./Components/ItemListContainer";
-import ItemDetailContainer from "./Components/ItemDetailContainer";
-import Cart from "./Components/Cart";
+import Navbar from "./Components/navbar/Navbar";
+import ItemListContainer from "./Components/item list/ItemListContainer";
+import ItemDetailContainer from "./Components/item detail/ItemDetailContainer";
+import Cart from "./Components/cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import { CarContextProvider } from "./context/CartContext";
 

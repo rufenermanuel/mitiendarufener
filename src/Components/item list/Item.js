@@ -1,5 +1,4 @@
 import React from "react";
-import ItemConunt from "./ItemCount";
 import { Link } from "react-router-dom";
 
 const Item = ({ data }) => {

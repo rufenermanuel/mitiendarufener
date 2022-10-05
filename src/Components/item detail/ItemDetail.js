@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useCartContext } from "../context/CartContext";
-import ItemConunt from "./ItemCount";
+import { useCartContext } from "../../context/CartContext";
+import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ item }) => {
   const { id, title, price, pictureUrl, description, quantity } = item;
@@ -31,7 +31,7 @@ const ItemDetail = ({ item }) => {
             <Link to={`/`}>
               <button>Volver</button>
             </Link>
-            <ItemConunt quantity={quantity} initial={1} adding={onAdding} />
+            <ItemCount quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
       </div>
