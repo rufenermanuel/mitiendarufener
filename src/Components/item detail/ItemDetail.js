@@ -6,7 +6,7 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ item }) => {
   const { id, title, price, pictureUrl, description, quantity } = item;
   const [productsAdded, setProductAdded] = useState(false);
-  const { addToCart } = useCartContext();
+  const { addToCart , cartlist} = useCartContext();
 
   const onAdding = (cartQuantity) => {
     setProductAdded(true);
@@ -34,6 +34,7 @@ const ItemDetail = ({ item }) => {
             <ItemCount quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
+        {cartlist.length?<button>Terminar mi compra</button>:false}
       </div>
     </div>
   );

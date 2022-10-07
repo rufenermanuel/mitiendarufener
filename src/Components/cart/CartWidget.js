@@ -1,15 +1,22 @@
 import React from "react";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { NavLink } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
-  return (
-    <div style={styles.container1}>
-      <p style={styles.paragraph}>Desde CartWidget</p>
-      <NavLink to='/cart'>
-      <ShoppingCartRoundedIcon />
+  const { totalCartQuantity } = useCartContext();
+  console.log(totalCartQuantity()>0);
 
+  return (
+
+    <div style={styles.container1} >
+      {totalCartQuantity()>0?    < div >
+      <NavLink to="/cart">
+        <ShoppingCartRoundedIcon />
       </NavLink>
+      {totalCartQuantity()}
+      </div> :<></>}
+   
     </div>
   );
 };
@@ -26,5 +33,8 @@ const styles = {
     padding: 20,
     color: "orange",
   },
+  apear:{
+    display:"none"
+  }
 };
 export default CartWidget;
