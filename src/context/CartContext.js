@@ -34,7 +34,7 @@ export function CarContextProvider({ children }) {
     }
   };
 
-  const removeItem = (id) => {setCartlist(cartlist.filter(product=>product.id !=id))
+  const removeItem = (id) => {setCartlist(cartlist.filter(product=>product.id !==id))
   
   };
 

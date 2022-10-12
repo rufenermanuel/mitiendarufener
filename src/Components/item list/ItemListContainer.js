@@ -3,15 +3,23 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { getProductsByCategory } from "../service/Api";
 
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+
+
 const ItemListContainer = (props) => {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    getProductsByCategory(categoryId).then((datos) => {
+   const qDb=getFirestore();
+   const qCollection=collection(qDb,'products')
+   getDocs(qCollection).then(res=>setProducts(res.docs.map(product=>({id:product.id,...product.data()}))))
+    /* getProductsByCategory(categoryId).then((datos) => {
       setProducts(datos);
-    });
+    }); */
   }, [categoryId]);
+  console.log(products)
+
   return (
     <>
       <h3>ItemListContainer</h3>
