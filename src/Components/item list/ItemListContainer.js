@@ -14,12 +14,11 @@ const ItemListContainer = (props) => {
    const qDb=getFirestore();
    const qCollection=collection(qDb,'products')
    getDocs(qCollection).then(res=>setProducts(res.docs.map(product=>({id:product.id,...product.data()}))))
-    /* getProductsByCategory(categoryId).then((datos) => {
+    getProductsByCategory(categoryId).then((datos) => {
       setProducts(datos);
-    }); */
+    });
   }, [categoryId]);
-  console.log(products)
-
+  
   return (
     <>
       <h3>ItemListContainer</h3>

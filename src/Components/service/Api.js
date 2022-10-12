@@ -1,20 +1,26 @@
 import data from "./data";
-
+//import { getFirestore, collection, getDocs } from "firebase/firestore";
 export const getProducts = async () => {
-  return data;
-};
+  // return data;
+  /* const qDb=getFirestore();
+   const qCollection=collection(qDb,'products')
+   getDocs(qCollection).then(res=>res.docs.map(product=>({id:product.id,...product.data()})))
+    */
 
+  return console.log(data);
+};
+getProducts();
 export const getProductById = async (id) => {
   return new Promise((res, rej) => {
-    setTimeout(() => {
+    
       res(data.filter((dat) => dat.id === parseInt(id)));
-    }, 1500);
+    
   });
 };
 
 export const getProductsByCategory = async (categoryId) => {
   return new Promise((res, rej) => {
-    setTimeout(() => {
+   
       if (categoryId) {
         console.log(categoryId);
         const filteredItems = data.filter(
@@ -27,6 +33,6 @@ export const getProductsByCategory = async (categoryId) => {
       res(
         categoryId ? data.filter((prod) => prod.category === categoryId) : data
       );
-    }, 1500);
+    ;
   });
 };
