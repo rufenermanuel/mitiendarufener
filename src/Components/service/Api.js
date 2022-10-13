@@ -1,15 +1,16 @@
 import data from "./data";
 //import { getFirestore, collection, getDocs } from "firebase/firestore";
-export const getProducts = async () => {
+/* export const getProducts = async () => {
   // return data;
-  /* const qDb=getFirestore();
+  
+  const qDb=getFirestore();
    const qCollection=collection(qDb,'products')
    getDocs(qCollection).then(res=>res.docs.map(product=>({id:product.id,...product.data()})))
-    */
+ 
 
   return console.log(data);
 };
-getProducts();
+getProducts(); */
 export const getProductById = async (id) => {
   return new Promise((res, rej) => {
     
