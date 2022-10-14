@@ -25,7 +25,7 @@ const ItemListContainer = (props) => {
         getDocs(queryCollection)
         .then(res=>setProducts(res.docs.map(product=>({id:product.id,...product.data()}))))
     }
-  }, [categoryId]);
+  }, [categoryId]); 
 
   return (
     <>

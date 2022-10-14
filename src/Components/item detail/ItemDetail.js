@@ -34,7 +34,7 @@ const ItemDetail = ({ item }) => {
             <ItemCount quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
-        {cartlist.length?<button>Terminar mi compra</button>:false}
+        {cartlist.length?<Link to={'/form'}> <button>Terminar mi compra</button></Link>:false}
       </div>
     </div>
   );

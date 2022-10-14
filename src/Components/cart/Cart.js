@@ -21,6 +21,7 @@ function Cart() {
 
         {cartlist.length?<div> <h6> Total de la compra: ${totalPrice()}</h6>
       <button onClick={()=>{clear()}}>Vaciar carrito</button></div>:<p>Tu carrito está vacio</p>}
+      {cartlist.length?<Link to={'/form'}> <button>Terminar mi compra</button></Link>:false}
      
       <Link to={`/`}>
         <button>Volver</button>

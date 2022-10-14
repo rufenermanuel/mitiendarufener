@@ -3,6 +3,8 @@ import Navbar from "./Components/navbar/Navbar";
 import ItemListContainer from "./Components/item list/ItemListContainer";
 import ItemDetailContainer from "./Components/item detail/ItemDetailContainer";
 import Cart from "./Components/cart/Cart";
+import Form from "./Components/form/Form"
+import Pepito from "./Components/form/Pepito";
 import { Routes, Route } from "react-router-dom";
 import { CarContextProvider } from "./context/CartContext";
 
@@ -20,6 +22,9 @@ function App() {
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/form" element={<Form />} />
+            <Route path="/pepito" element={<Pepito />} />
+
           </Routes>
         </CarContextProvider>
       </header>
