@@ -10,13 +10,12 @@ import { useCartContext } from "../../context/CartContext";
 
 function Form(props) {
   const queryDb = getFirestore();
-  const { cartList, clear, totalPrice } = useCartContext();
-
+  const { cartlist, clear, totalPrice } = useCartContext();
   const [clientData, setClientData] = useState({
     FullName: "",
     email: "",
     NumberCard: "",
-    Celphone: "",
+    Cellphone: "",
   });
 
   const handleInputChange = (event) => {
@@ -24,7 +23,6 @@ function Form(props) {
       ...clientData,
       [event.target.name]: event.target.value,
     });
-    console.log(clientData);
   };
 
   const buy = (e) => {
@@ -32,23 +30,20 @@ function Form(props) {
 
     addDoc(sellsCollection, {
       buyer: clientData,
-      items: cartList,
+      items: cartlist,
       date: serverTimestamp(),
-      total: totalPrice,
-    }).then((result) => {
-      alert({
-        title: "Order Complete",
-        text:
-          "We are processing your purschase " +
-          clientData.Name +
-          " Your ID is: " +
-          result.id +
-          " Thanks for buying using our e-commerce",
-        icon: "success",
-        button: "Yes",
+      total: totalPrice(),
+    })
+      .then((result) => {
+        alert(
+          `Muchas gracias por tu compra. Tu ID de operación es ${result.id}`
+        );
+        clear();
+      })
+      .catch((e) => {
+        console.log("error");
+        console.error(e);
       });
-      clear();
-    });
   };
 
   return (

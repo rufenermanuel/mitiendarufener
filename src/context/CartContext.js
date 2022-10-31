@@ -10,11 +10,9 @@ export function CarContextProvider({ children }) {
 
   const addToCart = (item, cartQuantity) => {
     if (isInCart(item.id)) {
-      console.log(" YA HABÍA");
       const newCart = cartlist.map((prod) => {
         if (prod.id === item.id) {
           const newQuantity = prod.cartQuantity + cartQuantity;
-          console.log(prod, " ", newQuantity);
 
           return { ...prod, cartQuantity: newQuantity };
         } else {
@@ -24,12 +22,10 @@ export function CarContextProvider({ children }) {
 
       setCartlist(newCart);
     } else {
-      console.log("NO HABÍA DE ESTO");
       const newProduct = {
         ...item,
         cartQuantity: cartQuantity,
       };
-      console.log(newProduct);
       setCartlist([...cartlist, newProduct]);
     }
   };

@@ -13,11 +13,7 @@ const ItemDetailContainer = () => {
     const queryDoc = doc(queryDb, "products", id);
     getDoc(queryDoc).then((res) => setProducDetail( {id: res.id, ...res.data()} ));
    
-
-    
   }, [id]);
-  console.log(producDetail)
-
   
   return (
 <>

@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "cursoreactrufener",
   storageBucket: "cursoreactrufener.appspot.com",
   messagingSenderId: "533071995200",
-  appId: "1:533071995200:web:038bc1026a0a2390229aa5"
+  appId: "1:533071995200:web:038bc1026a0a2390229aa5",
 };
 
 // Initialize Firebase

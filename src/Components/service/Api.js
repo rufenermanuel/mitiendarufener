@@ -23,7 +23,6 @@ export const getProductsByCategory = async (categoryId) => {
   return new Promise((res, rej) => {
    
       if (categoryId) {
-        console.log(categoryId);
         const filteredItems = data.filter(
           (prod) => prod.category === categoryId
         );

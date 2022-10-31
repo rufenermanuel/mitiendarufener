@@ -26,7 +26,6 @@ const ItemCount = ({ initial, quantity, adding }) => {
     return noStock();
   }, []);
   const onAddClick = () => {
-    console.log(number);
     if (number === quantity) {
       noSuma();
     } else {
