@@ -7,15 +7,17 @@ const CartWidget = () => {
   const { totalCartQuantity } = useCartContext();
 
   return (
-
-    <div style={styles.container1} >
-      {totalCartQuantity()>0?    < div >
-      <NavLink to="/cart">
-        <ShoppingCartRoundedIcon />
-      </NavLink>
-      {totalCartQuantity()}
-      </div> :<></>}
-   
+    <div style={styles.container1}>
+      {totalCartQuantity() > 0 ? (
+        <div>
+          <NavLink to="/cart">
+            <ShoppingCartRoundedIcon />
+          </NavLink>
+          {totalCartQuantity()}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
@@ -32,8 +34,8 @@ const styles = {
     padding: 20,
     color: "orange",
   },
-  apear:{
-    display:"none"
-  }
+  apear: {
+    display: "none",
+  },
 };
 export default CartWidget;

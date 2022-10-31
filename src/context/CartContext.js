@@ -1,7 +1,7 @@
 import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext([]);
-export const useCartContext = () => useContext(CartContext); //Opcional Custom Hook
+export const useCartContext = () => useContext(CartContext);
 
 export function CarContextProvider({ children }) {
   const [cartlist, setCartlist] = useState([]);
@@ -33,7 +33,7 @@ export function CarContextProvider({ children }) {
   const removeItem = (id) => {
     setCartlist(cartlist.filter((product) => product.id !== id));
   };
-  
+
   const clear = () => {
     setCartlist([]);
   };

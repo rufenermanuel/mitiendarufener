@@ -11,18 +11,17 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const queryDb = getFirestore();
     const queryDoc = doc(queryDb, "products", id);
-    getDoc(queryDoc).then((res) => setProducDetail( {id: res.id, ...res.data()} ));
-   
+    getDoc(queryDoc).then((res) =>
+      setProducDetail({ id: res.id, ...res.data() })
+    );
   }, [id]);
-  
+
   return (
-<>
+    <>
       <div style={styles.DetailContainer}>
-        
-           <ItemDetail  item={producDetail} />;
-       
+        <ItemDetail item={producDetail} />;
       </div>
-    </>   
+    </>
   );
 };
 const styles = {

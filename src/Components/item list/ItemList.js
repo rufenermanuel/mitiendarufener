@@ -5,12 +5,7 @@ const ItemList = ({ list = [] }) => {
   return (
     <div style={styles.container}>
       {list.map((prod) => {
-        return (
-          <Item 
-            data={prod}
-            key={String('item-'+prod.id)}
-          />
-        );
+        return <Item data={prod} key={String("item-" + prod.id)} />;
       })}
     </div>
   );

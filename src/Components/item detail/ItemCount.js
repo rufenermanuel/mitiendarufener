@@ -3,17 +3,14 @@ import React, { useEffect, useState } from "react";
 const ItemCount = ({ initial, quantity, adding }) => {
   const [number, setNumber] = useState(initial);
   const [buttonState, setButtonState] = useState(false);
-  //Función que se ejecuta para notificar que no hay stock
   const noSuma = () => {
     alert(
       `You cannot add more units, you have reached the available limit. ${quantity}`
     );
   };
-  //Función que se ejecuta al intentar restar cuando el contador está en cero
   const noResta = () => {
     alert(`The amounts indicated cannot be negative.`);
   };
-  // Función que revisa el stock y si el mismo es igual a cero deshabilita los botones de sumar y agregar al carrito
   const noStock = (quantity) => {
     if (quantity === 0) {
       setButtonState(true);
@@ -21,7 +18,6 @@ const ItemCount = ({ initial, quantity, adding }) => {
       setButtonState(false);
     }
   };
-  //Se ejecuta al montar el componente para verificar que exista stock
   useEffect(() => {
     return noStock();
   }, []);
@@ -44,9 +40,9 @@ const ItemCount = ({ initial, quantity, adding }) => {
   const onResetClick = () => {
     setNumber(initial);
   };
-  const onAddingToCart=()=>{
-adding(number)
-  }
+  const onAddingToCart = () => {
+    adding(number);
+  };
   return (
     <div style={styles.container}>
       <h5>Units available: {quantity}</h5>
@@ -62,7 +58,7 @@ adding(number)
         <button onClick={onResetClick}>Reset</button>
       </div>
       <button disabled={buttonState} onClick={onAddingToCart}>
-      Add to cart {number} units of the product!
+        Add to cart {number} units of the product!
       </button>
     </div>
   );

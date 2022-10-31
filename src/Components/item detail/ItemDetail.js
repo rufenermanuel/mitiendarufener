@@ -6,7 +6,7 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ item }) => {
   const { id, title, price, pictureUrl, description, quantity } = item;
   const [productsAdded, setProductAdded] = useState(false);
-  const { addToCart , cartlist} = useCartContext();
+  const { addToCart, cartlist } = useCartContext();
 
   const onAdding = (cartQuantity) => {
     setProductAdded(true);
@@ -34,7 +34,14 @@ const ItemDetail = ({ item }) => {
             <ItemCount quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
-        {cartlist.length?<Link to={'/form'}> <button>Finish my purchase</button></Link>:false}
+        {cartlist.length ? (
+          <Link to={"/form"}>
+            {" "}
+            <button>Finish my purchase</button>
+          </Link>
+        ) : (
+          false
+        )}
       </div>
     </div>
   );

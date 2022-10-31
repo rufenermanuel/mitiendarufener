@@ -1,15 +1,36 @@
 # Descripcion General # 
 
+ESP: 
 Desarrollo en React con fines educativos donde se aplica lo aprendido a lo largo de el curso de React en CoderHouse para la realización de un e-comerce. 
 
 Se puede realizar las siguientes acciones: 
 
 -Navegar utilizando los botones del Nav a las diferentes categorias
 -Hacer click en el logo de la web para volver a la página principal
--hacer click en el boton detalle del producto para ver sus detalles
+-Hacer click en el boton detalle del producto para ver sus detalles
 -Indicar cantidad de productos a agregar al carrito
+-Eliminar productos del carrito
+-Realizar la compra y dejarlo registrado en la DB de Firestore
 
-Se utilizó para el desarrollo del proyecto React(react router, hooks), material icons,
+Se utilizó para el desarrollo del proyecto React(react router, hooks, Context), material icons, Firestore de Firebase.
+
+Link Netlify: https://jolly-nasturtium-754e03.netlify.app/
+
+ENG: 
+Development in React for educational purposes where what is learned throughout the React course at CoderHouse is applied to carry out an e-commerce.
+
+The following actions can be performed:
+
+-Navigate using the Nav buttons to the different categories
+-Click on the web logo to return to the main page
+-Click on the product detail button to see its details
+-Indicate quantity of products to add to cart
+-Remove products from cart
+-Make the purchase and leave it registered in the Firestore DB
+
+It was used for the development of the project: React(react router, hooks, Context), material icons, Firebase Firestore.
+
+Link Netlify: https://jolly-nasturtium-754e03.netlify.app/
 
 ![](appGif.gif)
 
