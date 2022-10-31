@@ -23,18 +23,18 @@ const ItemDetail = ({ item }) => {
         {productsAdded ? (
           <div>
             <NavLink to="/cart">
-              <button>Ir al Carrito ! </button>
+              <button>Go to the cart ! </button>
             </NavLink>
           </div>
         ) : (
           <div>
             <Link to={`/`}>
-              <button>Volver</button>
+              <button>Return</button>
             </Link>
             <ItemCount quantity={quantity} initial={1} adding={onAdding} />
           </div>
         )}
-        {cartlist.length?<Link to={'/form'}> <button>Terminar mi compra</button></Link>:false}
+        {cartlist.length?<Link to={'/form'}> <button>Finish my purchase</button></Link>:false}
       </div>
     </div>
   );

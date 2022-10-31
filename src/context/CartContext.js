@@ -30,11 +30,13 @@ export function CarContextProvider({ children }) {
     }
   };
 
-  const removeItem = (id) => {setCartlist(cartlist.filter(product=>product.id !==id))
-  
+  const removeItem = (id) => {
+    setCartlist(cartlist.filter((product) => product.id !== id));
   };
-
-  const clear = () => setCartlist([]);
+  
+  const clear = () => {
+    setCartlist([]);
+  };
 
   const totalPrice = () => {
     return cartlist.reduce(
@@ -44,12 +46,20 @@ export function CarContextProvider({ children }) {
   };
 
   const totalCartQuantity = () => {
-    return cartlist.reduce((acc, product) => acc +=  product.cartQuantity,
-    0)
+    return cartlist.reduce((acc, product) => (acc += product.cartQuantity), 0);
   };
 
   return (
-    <CartContext.Provider value={{ addToCart, removeItem, clear, totalPrice, totalCartQuantity, cartlist }}>
+    <CartContext.Provider
+      value={{
+        addToCart,
+        removeItem,
+        clear,
+        totalPrice,
+        totalCartQuantity,
+        cartlist,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

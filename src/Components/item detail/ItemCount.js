@@ -6,12 +6,12 @@ const ItemCount = ({ initial, quantity, adding }) => {
   //Función que se ejecuta para notificar que no hay stock
   const noSuma = () => {
     alert(
-      `No puede agregar más unidades, llegó al limite disponible que son ${quantity}`
+      `You cannot add more units, you have reached the available limit. ${quantity}`
     );
   };
   //Función que se ejecuta al intentar restar cuando el contador está en cero
   const noResta = () => {
-    alert(`Las cantidades indicadas no pueden ser negativas`);
+    alert(`The amounts indicated cannot be negative.`);
   };
   // Función que revisa el stock y si el mismo es igual a cero deshabilita los botones de sumar y agregar al carrito
   const noStock = (quantity) => {
@@ -49,7 +49,7 @@ adding(number)
   }
   return (
     <div style={styles.container}>
-      <h5>Unidades disponibles: {quantity}</h5>
+      <h5>Units available: {quantity}</h5>
       <div style={styles.buttons}>
         <button disabled={buttonState} onClick={onAddClick}>
           +
@@ -59,10 +59,10 @@ adding(number)
 
         <button onClick={onRestClick}>-</button>
 
-        <button onClick={onResetClick}>Resetear</button>
+        <button onClick={onResetClick}>Reset</button>
       </div>
       <button disabled={buttonState} onClick={onAddingToCart}>
-        Agregar al carrito {number} unidades del producto !
+      Add to cart {number} units of the product!
       </button>
     </div>
   );

@@ -36,7 +36,7 @@ function Form(props) {
     })
       .then((result) => {
         alert(
-          `Muchas gracias por tu compra. Tu ID de operación es ${result.id}`
+          `Thank you very much for your purchase. Your operation ID is ${result.id}`
         );
         clear();
       })
@@ -48,7 +48,7 @@ function Form(props) {
 
   return (
     <div>
-      <h1>Finish your purchase</h1>
+      <h1 id="finish">Finish your purchase</h1>
       <form>
         <div>
           <h1>Toral price: ${totalPrice()}</h1>
@@ -58,6 +58,7 @@ function Form(props) {
             className="form"
             name="FullName"
             onChange={handleInputChange}
+            id="input-Id"
           ></input>
         </div>
         <div>
@@ -67,6 +68,7 @@ function Form(props) {
             className="form"
             name="email"
             onChange={handleInputChange}
+            id="input-Id"
           ></input>
         </div>
         <div>
@@ -76,6 +78,7 @@ function Form(props) {
             className="form"
             name="NumberCard"
             onChange={handleInputChange}
+            id="input-Id"
           ></input>
         </div>
         <div>
@@ -85,6 +88,7 @@ function Form(props) {
             className="form"
             name="Cellphone"
             onChange={handleInputChange}
+            id="input-Id"
           ></input>
         </div>
       </form>

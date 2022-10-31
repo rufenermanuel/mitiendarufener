@@ -29,7 +29,7 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-      <h3>ItemListContainer</h3>
+      <h3>Our Store</h3>
       <p style={styles.greet}>{props.greeting}</p>
       {/* Al modificar el prop cantidad a cero se inhabilitan los botones sumar y agregar al carrito */}
       <ItemList list={products} />

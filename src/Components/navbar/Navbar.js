@@ -1,12 +1,12 @@
 import React from "react";
-import logo from ".././../assets/logo.jpg"
+import logo from ".././../assets/logo.jpg";
 import CartWidget from "../cart/CartWidget";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <header style={styles.container}>
-      <Link to="/">
+      <Link style={styles.a} to="/">
         {" "}
         <img style={styles.image} src={logo} alt="Imagen Ecomerce" />
       </Link>
@@ -34,11 +34,16 @@ const styles = {
     justifyCOntent: "space-between",
     alignItems: "center",
   },
+  a: {
+    width: "25%",
+  },
   image: {
-    width: "35%",
+    width: "55%",
   },
   links: {
     padding: 10,
+    color:"yellow",
+    textDecoration:"none"
   },
   title: {
     padding: 10,

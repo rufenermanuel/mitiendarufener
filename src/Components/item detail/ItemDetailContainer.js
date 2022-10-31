@@ -17,7 +17,6 @@ const ItemDetailContainer = () => {
   
   return (
 <>
-      <h3>Desde ItemDetailContainer</h3>
       <div style={styles.DetailContainer}>
         
            <ItemDetail  item={producDetail} />;

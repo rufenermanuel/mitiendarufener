@@ -9,7 +9,7 @@ const Item = ({ data }) => {
         <h2 style={styles.title}>{title}</h2>
         <img id={id} src={pictureUrl} alt={title} style={styles.image} />
         <Link to={`/item/${id}`}>
-          <button>Detalles</button>
+          <button>Details</button>
         </Link>
         <p>${price}</p>
         <p style={styles.description}>{description}</p>
